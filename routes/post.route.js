@@ -1,16 +1,18 @@
 import express from "express";
 import multer from "multer";
+import { isAuthenticated } from "../middleware/auth.js";
+
+// Import controllers individually
+import { getPosts } from "../controllers/posts/getPosts.controller.js";
+import { getSearchPosts } from "../controllers/posts/searchPosts.controller.js";
+import { createPost } from "../controllers/posts/createPost.controller.js";
+import { updatePost } from "../controllers/posts/updatePost.controller.js";
+import { deletePost } from "../controllers/posts/deletePost.controller.js";
+import { getPost } from "../controllers/posts/getPost.controller.js";
 import {
-  getPosts,
-  getPost,
-  createPost,
-  deletePost,
   uploadAuth,
   uploadFile,
-  updatePost,
-  getSearchPosts,
-} from "../controllers/post.controllers.js";
-import { isAuthenticated } from "../middleware/auth.js";
+} from "../controllers/posts/upload.controller.js";
 
 const router = express.Router();
 

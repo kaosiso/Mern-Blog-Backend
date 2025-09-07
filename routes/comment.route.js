@@ -1,12 +1,14 @@
 import express from "express";
+
 import {
   getPostComments,
   addComment,
-  deleteComment,
   editComment,
+  deleteComment,
   reportComment,
   getCommentReplies,
-} from "../controllers/comment.controller.js";
+} from "../controllers/comments/index.js";
+
 import { isAuthenticated } from "../middleware/auth.js";
 
 const router = express.Router();

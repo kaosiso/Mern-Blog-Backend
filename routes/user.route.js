@@ -1,14 +1,15 @@
 import express from "express";
 import multer from "multer";
 import { isAuthenticated } from "../middleware/auth.js";
+import { getProfile } from "../controllers/users/getProfile.controller.js";
+import { updateProfile } from "../controllers/users/updateProfile.controller.js";
 import {
-  getProfile,
-  updateProfile,
   uploadAuth,
   uploadFile,
-  getUserPosts,
-  getPublicProfile,
-} from "../controllers/user.controllers.js";
+} from "../controllers/users/upload.controller.js";
+import { getUserPosts } from "../controllers/users/getUserPosts.controller.js";
+import { getPublicProfile } from "../controllers/users/getPublicProfile.controller.js";
+
 
 const router = express.Router();
 const upload = multer({ storage: multer.memoryStorage() });
